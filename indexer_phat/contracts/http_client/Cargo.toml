@@ -1,0 +1,31 @@
+[package]
+name = "http_client"
+version = "0.1.0"
+authors = ["dariaag"]
+edition = "2021"
+
+[dependencies]
+ink = { version = "4.2", default-features = false }
+
+scale = { package = "parity-scale-codec", version = "3", default-features = false, features = [
+    "derive",
+] }
+scale-info = { version = "2", default-features = false, features = [
+    "derive",
+], optional = true }
+
+pink-extension = { version = "0.4", default-features = false }
+pink-s3 = "0.7.0"
+indoc = "2.0.4"
+
+[dev-dependencies]
+pink-extension-runtime = "0.4"
+
+[lib]
+name = "http_client"
+path = "src/lib.rs"
+
+[features]
+default = ["std"]
+std = ["ink/std", "scale/std", "scale-info/std", "pink-extension/std"]
+ink-as-dependency = []
