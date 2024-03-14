@@ -19,7 +19,7 @@ pink-s3 = "0.7.0"
 indoc = "2.0.4"
 
 [dev-dependencies]
-pink-extension-runtime = "0.4"
+pink-extension-runtime = "0.5"
 
 [lib]
 name = "http_client"
