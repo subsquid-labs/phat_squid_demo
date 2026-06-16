@@ -10,9 +10,9 @@ The contract (`indexer_phat/contracts/http_client`) is an ink! 4.2 contract buil
 
 Its `start_indexer(start, end)` message loops over a block range and, for each block:
 
-1. Requests a SQD Network worker URL for the `ethereum-mainnet` dataset from the SQD Network gateway (`https://v2.archive.subsquid.io/network/ethereum-mainnet`).
+1. Requests a SQD Network worker URL for the `ethereum-mainnet` dataset from the SQD Network gateway.
 2. Sends an EVM query to that worker for ERC-20 `Transfer` logs of the USDC contract (`0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48`).
-3. Stores the raw response for that block in an S3-compatible bucket using the [`pink-s3`](https://crates.io/crates/pink-s3) library, keyed as `block-<number>`.
+3. Stores the raw response for that block in an S3-compatible bucket using the `pink-s3` library, keyed as `block-<number>`.
 4. Updates `last_indexed_block`.
 
 `get_last_indexed_block()` returns the last block number the contract processed.
